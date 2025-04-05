@@ -1,0 +1,49 @@
+Name,Description,Duration,Remote Testing Support,Adaptive Support,Link
+Numerical Reasoning Test,"Assesses the ability to interpret, analyze, and draw conclusions from numerical data",20 mins,Yes,Yes,https://www.shl.com/en/assessments/numerical-reasoning/
+Verbal Reasoning Test,"Measures comprehension and interpretation of written texts",25 mins,Yes,No,https://www.shl.com/en/assessments/verbal-reasoning/
+Logical Reasoning Test,"Assesses abstract and logical thinking using patterns and sequences",30 mins,Yes,Yes,https://www.shl.com/en/assessments/logical-reasoning/
+Cognitive Ability Test,"Comprehensive assessment of multiple reasoning abilities",40 mins,Yes,Yes,https://www.shl.com/en/assessments/cognitive-ability/
+Personality Questionnaire,"Analyzes personality traits for role fit",25 mins,Yes,Yes,https://www.shl.com/en/assessments/personality-questionnaire/
+Coding Simulation,"Assesses real-world programming and debugging ability",60 mins,Yes,Yes,https://www.shl.com/en/assessments/coding-simulation/
+Technical Skills Test,"Evaluates technical or job-specific knowledge",45 mins,Yes,No,https://www.shl.com/en/assessments/technical-skills/
+Python Coding Test,"Evaluates Python programming and problem-solving skills",30 mins,Yes,Yes,https://www.shl.com/en/assessments/coding-simulation/
+Java Coding Test,"Assesses Java development, syntax, and debugging skills",40 mins,Yes,Yes,https://www.shl.com/en/assessments/coding-simulation/
+SQL Skills Test,"Tests ability to query and manipulate relational databases",30 mins,Yes,No,https://www.shl.com/en/assessments/technical-skills/
+JavaScript Test,"Assesses knowledge of JavaScript syntax and DOM manipulation",25 mins,Yes,No,https://www.shl.com/en/assessments/technical-skills/
+Workplace Behavior Assessment,"Measures workplace behaviors, motivation, and culture fit",25 mins,Yes,No,https://www.shl.com/en/assessments/workplace-behavior/
+Situational Judgment Test,"Evaluates judgment and decision-making in workplace scenarios",20 mins,Yes,No,https://www.shl.com/en/assessments/situational-judgement/
+Inductive Reasoning Test,"Assesses pattern recognition and problem-solving",30 mins,Yes,Yes,https://www.shl.com/en/assessments/inductive-reasoning/
+Deductive Reasoning Test,"Assesses ability to apply general rules to specific problems",30 mins,Yes,Yes,https://www.shl.com/en/assessments/deductive-reasoning/
+Gamified Assessment,"Uses game-like tasks to assess problem-solving and memory",30 mins,Yes,Yes,https://www.shl.com/en/assessments/gamified-assessment/
+Leadership Assessment,"Evaluates leadership potential and decision-making",50 mins,Yes,Yes,https://www.shl.com/en/assessments/leadership/
+Sales Skills Assessment,"Measures persuasion, negotiation, and client engagement",35 mins,Yes,No,https://www.shl.com/en/assessments/sales-skills/
+Customer Service Test,"Assesses communication and empathy in customer roles",30 mins,Yes,No,https://www.shl.com/en/assessments/customer-service/
+Critical Thinking Test,"Assesses ability to evaluate arguments and identify assumptions",35 mins,Yes,Yes,https://www.shl.com/en/assessments/critical-thinking/
+Problem Solving Test,"Evaluates analytical and logical reasoning skills",30 mins,Yes,Yes,https://www.shl.com/en/assessments/problem-solving/
+Business Decision Making Test,"Assesses strategic thinking and decision-making abilities",40 mins,Yes,No,https://www.shl.com/en/assessments/business-decision-making/
+Project Management Test,"Measures project planning, risk assessment, and execution skills",45 mins,Yes,No,https://www.shl.com/en/assessments/project-management/
+Negotiation Skills Test,"Evaluates ability to negotiate, influence, and resolve conflicts",35 mins,Yes,Yes,https://www.shl.com/en/assessments/negotiation-skills/
+Attention to Detail Test,"Measures accuracy and focus on details in work tasks",25 mins,Yes,No,https://www.shl.com/en/assessments/attention-to-detail/
+Work Ethic and Integrity Test,"Assesses honesty, responsibility, and work commitment",25 mins,Yes,No,https://www.shl.com/en/assessments/work-ethic-integrity/
+Collaboration and Teamwork Test,"Measures ability to work effectively in teams",30 mins,Yes,Yes,https://www.shl.com/en/assessments/collaboration-teamwork/
+Data Interpretation Test,"Assesses ability to analyze and draw conclusions from complex data",40 mins,Yes,Yes,https://www.shl.com/en/assessments/data-interpretation/
+UX/UI Design Skills Test,"Evaluates knowledge of user experience and interface design principles",50 mins,Yes,No,https://www.shl.com/en/assessments/ux-ui-design/
+Marketing Aptitude Test,"Measures understanding of marketing concepts and consumer behavior",35 mins,Yes,Yes,https://www.shl.com/en/assessments/marketing-aptitude/
+HR Competency Test,"Assesses knowledge of HR principles, policies, and employee management",40 mins,Yes,Yes,https://www.shl.com/en/assessments/hr-competency/
+Financial Analysis Test,"Measures ability to interpret financial statements and assess risk",45 mins,Yes,No,https://www.shl.com/en/assessments/financial-analysis/
+Entrepreneurial Mindset Test,"Evaluates risk-taking, adaptability, and business acumen",30 mins,Yes,Yes,https://www.shl.com/en/assessments/entrepreneurial-mindset/
+Ethical Decision-Making Test,"Assesses ability to make ethical choices in complex situations",30 mins,Yes,Yes,https://www.shl.com/en/assessments/ethical-decision-making/
+Legal Reasoning Test,"Evaluates knowledge of legal principles and logical reasoning",40 mins,Yes,No,https://www.shl.com/en/assessments/legal-reasoning/
+AI and Machine Learning Test,"Measures understanding of AI models, algorithms, and applications",50 mins,Yes,Yes,https://www.shl.com/en/assessments/ai-machine-learning/
+Cybersecurity Awareness Test,"Assesses knowledge of cybersecurity threats and best practices",30 mins,Yes,Yes,https://www.shl.com/en/assessments/cybersecurity-awareness/
+Software Development Principles Test,"Evaluates knowledge of software design, architecture, and methodologies",50 mins,Yes,No,https://www.shl.com/en/assessments/software-development/
+Healthcare Knowledge Test,"Measures understanding of healthcare policies, ethics, and procedures",40 mins,Yes,Yes,https://www.shl.com/en/assessments/healthcare-knowledge/
+Supply Chain Management Test,"Assesses logistics, procurement, and supply chain optimization skills",45 mins,Yes,Yes,https://www.shl.com/en/assessments/supply-chain-management/
+Time Management Test,"Assesses ability to prioritize tasks and manage time effectively",25 mins,Yes,Yes,https://www.shl.com/en/assessments/time-management/
+Product Management Test,"Evaluates ability to define strategy, roadmap, and feature execution",45 mins,Yes,No,https://www.shl.com/en/assessments/product-management/
+Basic Programming Concepts Test,"Tests understanding of data types, loops, and conditionals",30 mins,Yes,No,https://www.shl.com/en/assessments/technical-skills/
+Full-Stack Developer Test,"Assesses front-end and back-end skills using realistic problems",60 mins,Yes,Yes,https://www.shl.com/en/assessments/coding-simulation/
+Client Engagement Skills Test,"Measures effectiveness in client communications and relationship building",35 mins,Yes,Yes,https://www.shl.com/en/assessments/sales-skills/
+Data Analysis Skills Test,"Tests analytical thinking and Excel/data tools usage",30 mins,Yes,Yes,https://www.shl.com/en/assessments/data-interpretation/
+Innovation and Creativity Test,"Assesses out-of-the-box thinking and creative problem-solving",30 mins,Yes,Yes,https://www.shl.com/en/assessments/innovation-creativity/
+Language Proficiency Test,"Measures proficiency in English and other languages",30 mins,Yes,No,https://www.shl.com/en/assessments/language/
