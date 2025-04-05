@@ -36,16 +36,13 @@ class SHLMODEL:
         return response.text.strip()
 
     def getTopAssessments(self, user_query, k=5):
-        # Improve the query with Gemini
         better_query = self.enhance_query(user_query)
-        # Convert the query to a TF-IDF vector
         query_vector = self.vectorizer.transform([better_query])
 
         # Measure similarity between query and all assessments
         scores = cosine_similarity(query_vector, self.vectors).flatten()
         self.df["score"] = scores
 
-        # Pick top k recommendeation
         top_results = self.df.nlargest(k, "score").copy()
         top_results["summary"] = top_results["combined"].apply(self.summarize_assessment)
         
