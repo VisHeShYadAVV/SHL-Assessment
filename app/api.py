@@ -25,14 +25,12 @@ class QueryInput(BaseModel):
     query: str
 
 
-@app.post("/recommend")
-
-# POST API
-def recommend(input:QueryInput):
+@@app.get("/recommend")
+def recommend(query: str, k: int):
     try:
-        df=get_recommendations(input.query)
-        if(df.empty):
-            raise HTTPException(status_code=404,detail="No relevant assessments found")
+        df = get_recommendations(query)
+        if df.empty:
+            raise HTTPException(status_code=404, detail="No relevant assessments found")
         return df.to_dict(orient="records")
     except Exception as e:
-        raise HTTPException(status_code=500,detail=str(e))
+        raise HTTPException(status_code=500, detail=str(e))
