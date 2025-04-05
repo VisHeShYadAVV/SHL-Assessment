@@ -15,10 +15,10 @@ k = st.slider("Number of Recommendations", 1, 8, 5)
 if st.button("Get Recommendations"):
     with st.spinner("Fetching..."):
         try:
-            # Send request to the backend
-            response = requests.post(
+            # Send GET request with query and k as URL parameters
+            response = requests.get(
                 "https://shl-assessment.onrender.com/recommend",  # Backend URL
-                json={"query": query, "k": k}  # The query and number of recommendations to be sent
+                params={"query": query, "k": k}  # Send query and k as URL parameters
             )
 
             # Check if the request was successful
