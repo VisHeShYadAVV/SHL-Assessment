@@ -18,7 +18,7 @@ if st.button("Get Recommendations"):
             # Send request to the backend
             response = requests.post(
                 "https://shl-assessment.onrender.com/recommend",  # Backend URL
-                json={"query": query}  # The query parameter to be sent
+                json={"query": query, "k": k}  # The query and number of recommendations to be sent
             )
 
             # Check if the request was successful
@@ -49,6 +49,6 @@ if st.button("Get Recommendations"):
                         )
                         st.markdown("---")
             else:
-                st.error("Error fetching recommendations from the server.")
+                st.error(f"Error fetching recommendations from the server. Status code: {response.status_code}")
         except Exception as e:
             st.error(f"Exception: {e}")
