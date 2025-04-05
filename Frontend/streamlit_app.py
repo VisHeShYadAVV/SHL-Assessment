@@ -11,7 +11,7 @@ k = st.slider("Number of Recommendations", 1, 8, 5)
 if st.button("Get Recommendations"):
     with st.spinner("Fetching..."):
         try:
-            response = requests.get("http://127.0.0.1:8000/recommend", params={"query": query, "k": k})
+            response = requests.get("https://shl-api.onrender.com/recommend", params={"query": query, "k": k})
             if response.status_code == 200:
                 results = response.json()
 
