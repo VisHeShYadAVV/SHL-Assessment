@@ -25,7 +25,7 @@ class QueryInput(BaseModel):
     query: str
 
 
-@@app.get("/recommend")
+@app.get("/recommend")
 def recommend(query: str, k: int):
     try:
         df = get_recommendations(query)
