@@ -16,6 +16,10 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+@app.get("/")
+def root():
+    return {"message": "SHL API is working"}
+
 # incoming JSON must have a string
 class QueryInput(BaseModel):
     query: str
