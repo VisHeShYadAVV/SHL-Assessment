@@ -8,4 +8,3 @@ sentence-transformers
 streamlit
 requests
 python-multipart
-requestsN
