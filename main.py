@@ -1,4 +1,3 @@
-# main.py
 from app.api import app
 from fastapi import FastAPI
 from app.recommender import get_recommendations
