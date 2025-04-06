@@ -15,7 +15,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "SHL API is working"}
+    return {"message": "SHL  API is working"}
 
 class QueryInput(BaseModel):
     query: str
