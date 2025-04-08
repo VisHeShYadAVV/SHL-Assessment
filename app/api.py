@@ -2,6 +2,8 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from app.recommender import get_recommendations
+import uvicorn
+import os
 
 app = FastAPI()
 
@@ -15,7 +17,7 @@ app.add_middleware(
 
 @app.get("/")
 def root():
-    return {"message": "SHL  API is working"}
+    return {"message": "Hello from Vishesh’s backend"}
 
 class QueryInput(BaseModel):
     query: str
@@ -37,3 +39,7 @@ def recommend(query: str, k: int):
     except Exception as e:
         print(f"Error: {e}")  
         raise HTTPException(status_code=500, detail=str(e))
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)

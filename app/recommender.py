@@ -15,28 +15,26 @@ def get_recommendations(query: str, k: int = 10):
 
     for _, row in results.iterrows():
         output.append({
-            "name": row.get("Name", "Unnamed"),
+            "assessment_name": row.get("Name", "Unnamed"),
             "url": row.get("Link", "#"),
-            "summary": row.get("summary", "No summary available"),
-            "score": float(row.get("score", 0.0)),
+            "remote_testing_support": row.get("Remote Testing Support", "N/A"),
+            "adaptive_irt_support": row.get("Adaptive Support", "N/A"),
             "duration": row.get("Duration", "N/A"),
-            "remote_testing": row.get("Remote Testing Support", "N/A"),
-            "adaptive_testing": row.get("Adaptive Support", "N/A")
+            "test_type": row.get("Test Type", "N/A")  
         })
-
 
     if len(output) < k:
         needed = k - len(output)
         fillers = get_generic_assessments(set(results['AssessmentID']), needed)
         for _, row in fillers.iterrows():
             output.append({
-                "name": row.get("Name", "Unnamed"),
+                "assessment_name": row.get("Name", "Unnamed"),
                 "url": row.get("Link", "#"),
-                "summary": "Generic assessment.",
-                "score": None,
+                "remote_testing_support": row.get("Remote Testing Support", "N/A"),
+                "adaptive_irt_support": row.get("Adaptive Support", "N/A"),
                 "duration": row.get("Duration", "N/A"),
-                "remote_testing": row.get("Remote Testing Support", "N/A"),
-                "adaptive_testing": row.get("Adaptive Support", "N/A")
+                "test_type": row.get("Test Type", "N/A")
             })
 
     return output
+
