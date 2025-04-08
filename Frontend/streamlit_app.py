@@ -12,8 +12,8 @@ if st.button("Get Recommendations"):
     with st.spinner("Fetching..."):
         try:
             response = requests.get(
-                "https://shl-assessment.onrender.com/recommend",  
-                params={"query": query, "k": k}  
+                "http://127.0.0.1:8000/recommend",  # Local FastAPI backend
+                params={"query": query, "k": k}
             )
 
             if response.status_code == 200:
