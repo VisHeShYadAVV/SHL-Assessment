@@ -13,7 +13,11 @@ if st.button("Get Recommendations"):
         try:
             response = requests.get(
                 "http://127.0.0.1:8000/recommend",  # Local FastAPI backend
+<<<<<<< HEAD
                 params={"query": query, "k": k}  
+=======
+                params={"query": query, "k": k}
+>>>>>>> 971f248f11f6fdc4d5516dd0af2f20536cd65ff0
             )
 
             if response.status_code == 200:
