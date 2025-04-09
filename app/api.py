@@ -16,17 +16,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Health check
 @app.get("/")
 def root():
     return {"message": "Hello from Vishesh's backend"}
 
-# Input model (not used here unless you switch to POST)
 class QueryInput(BaseModel):
     query: str
     k: int 
 
-# GET /recommend endpoint
 @app.get("/recommend")
 def recommend(query: str, k: int = 5):
     try:
@@ -43,7 +40,6 @@ def recommend(query: str, k: int = 5):
         print(f"Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
-# Uvicorn entrypoint
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
     uvicorn.run("app.api:app", host="0.0.0.0", port=port, reload=True)

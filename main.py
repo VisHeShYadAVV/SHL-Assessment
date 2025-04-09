@@ -5,7 +5,6 @@ from app.recommender import get_recommendations
 
 app = FastAPI()
 
-# CORS config
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -14,17 +13,14 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# Health check endpoint
 @app.get("/")
 def root():
     return {"message": "Hello from Vishesh’s SHL backend"}
 
-# Input model
 class QueryInput(BaseModel):
     query: str
     k: int
 
-# Main recommendation route
 @app.get("/recommend")
 def recommend(query: str, k: int):
     try:
