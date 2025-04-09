@@ -3,7 +3,7 @@ import requests
 
 st.set_page_config(page_title="SHL Assessment Recommender", page_icon="🔍")
 
-st.title("🔍 SHL Assessment Recommendation System")
+st.title("SHL Assessment Recommendation System")
 
 query = st.text_area("Enter Job Description or Assessment Needs:")
 k = st.slider("Number of Recommendations", 1, 8, 5)
