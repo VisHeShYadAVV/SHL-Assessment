@@ -3,16 +3,13 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import google.generativeai as genai
 
-# Configure Gemini API Key
 genai.configure(api_key="AIzaSyBJSd7iZDT8QvOULp7j9FIMSDJMu5OoB3o")
 
-# Load and prepare dataset
 df = pd.read_csv("shl_real_assessments.csv")
 df['Name'] = df['Name'].fillna('')
 df['Description'] = df['Description'].fillna('')
 df['Combined'] = df['Name'] + " " + df['Description']
 
-# TF-IDF vectorization
 vectorizer = TfidfVectorizer(stop_words='english')
 tfidf_matrix = vectorizer.fit_transform(df['Combined'])
 
@@ -48,7 +45,7 @@ def get_enhanced_query_with_genai(query: str):
         return response.text.strip()
     except Exception as e:
         print("[GenAI Error]", e)
-        return query  # fallback
+        return query 
 
 def get_recommendations(query: str, k: int):
     enhanced_query = get_enhanced_query_with_genai(query)
