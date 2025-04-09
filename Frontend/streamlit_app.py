@@ -12,9 +12,10 @@ if st.button("Get Recommendations"):
     with st.spinner("Fetching..."):
         try:
             response = requests.get(
-                "http://127.0.0.1:8000/recommend", 
-                params={"query": query, "k": k}  
+                "https://shl-assessment-production-a03e.up.railway.app/recommend", 
+                params={"query": query, "k": k}
             )
+
 
             if response.status_code == 200:
                 results = response.json()
