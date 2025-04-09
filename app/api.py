@@ -7,6 +7,7 @@ import os
 
 app = FastAPI()
 
+# CORS settings
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],  
@@ -15,31 +16,34 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+# Health check
 @app.get("/")
 def root():
-    return {"message": "Hello from Vishesh’s backend"}
+    return {"message": "Hello from Vishesh's backend"}
 
+# Input model (not used here unless you switch to POST)
 class QueryInput(BaseModel):
     query: str
     k: int 
 
+# GET /recommend endpoint
 @app.get("/recommend")
-def recommend(query: str, k: int):
+def recommend(query: str, k: int = 5):
     try:
-        if k < 1 or k > 8:  
+        if k < 1 or k > 8:
             raise HTTPException(status_code=400, detail="Number of recommendations must be between 1 and 8")
 
-        df = get_recommendations(query)  
+        recommendations = get_recommendations(query, k)
 
-        if df.empty:
+        if not recommendations:
             raise HTTPException(status_code=404, detail="No relevant assessments found")
 
-        recommendations = df.head(k).to_dict(orient="records")  
         return recommendations
     except Exception as e:
-        print(f"Error: {e}")  
+        print(f"Error: {e}")
         raise HTTPException(status_code=500, detail=str(e))
 
+# Uvicorn entrypoint
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 8000))
-    uvicorn.run("main:app", host="0.0.0.0", port=port, reload=False)
+    uvicorn.run("app.api:app", host="0.0.0.0", port=port, reload=True)
