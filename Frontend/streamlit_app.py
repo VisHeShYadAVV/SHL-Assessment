@@ -1,7 +1,7 @@
 import streamlit as st
 import requests
 
-st.set_page_config(page_title="SHL Assessment Recommender", page_icon="🔍")
+st.set_page_config(page_title="SHL Assessment Recommender")
 
 st.title("SHL Assessment Recommendation System")
 
