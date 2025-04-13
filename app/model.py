@@ -1,10 +1,12 @@
 import google.generativeai as genai
 import pandas as pd
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
+from dotenv import load_dotenv
+load_dotenv()  #loading all the envirornment variables
 
-genai.configure(api_key="AIzaSyBJSd7iZDT8QvOULp7j9FIMSDJMu5OoB3o")
-
+genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
 class SHLMODEL:
 
     def __init__(self,dataframe):
