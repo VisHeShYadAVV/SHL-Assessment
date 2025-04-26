@@ -1,39 +1,52 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, Query, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-from app.recommender import get_recommendations
+from typing import List, Dict, Union
+from app.model import SHLMODEL
+import pandas as pd
+
+df = pd.read_csv("shl_real_assessments.csv")
+
+model = SHLMODEL(df)
 
 app = FastAPI()
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["*"], 
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
 @app.get("/")
-def root():
-    return {"message": "Hello from Vishesh’s SHL backend"}
+def read_root():
+    return {"message": "Welcome to the SHL Assessment Recommendation API!"}
 
-class QueryInput(BaseModel):
-    query: str
-    k: int
-
-@app.get("/recommend")
-def recommend(query: str, k: int):
+@app.get("/recommend", response_model=Union[List[Dict[str, str]], Dict[str, str]])
+def recommend(query: str = Query(...), k: int = Query(5, ge=1, le=8)):
+    """
+    Returns the top k relevant SHL assessments based on the provided query.
+    """
     try:
-        if k < 1 or k > 8:
-            raise HTTPException(status_code=400, detail="k must be between 1 and 8")
-
-        results = get_recommendations(query, k)
+        results = model.getTopAssessments(query, k)
 
         if not results:
-            raise HTTPException(status_code=404, detail="No relevant assessments found")
+            raise HTTPException(status_code=404, detail="No relevant assessments found.")
 
-        return results
+        response = [
+            {
+                "assessment_name": result["assessment_name"],
+                "url": result["url"],
+                "description": result["description"],
+                "duration": result["duration"],
+                "remote_testing_support": result["remote_testing_support"],
+                "adaptive_irt_support": result["adaptive_irt_support"],
+                "score": str(result["score"])
+            }
+            for result in results
+        ]
+        return response
 
     except Exception as e:
-        print(f"Error: {e}")
-        raise HTTPException(status_code=500, detail=str(e))
+        print("Error:", str(e))
+        raise HTTPException(status_code=500, detail=f"An error occurred: {str(e)}")

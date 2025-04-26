@@ -9,17 +9,15 @@ query = st.text_area("Enter Job Description or Assessment Needs:")
 k = st.slider("Number of Recommendations", 1, 8, 5)
 
 if st.button("Get Recommendations"):
-    with st.spinner("Fetching..."):
+    with st.spinner("Fetching recommendations..."):
         try:
             response = requests.get(
                 "https://shl-assessment-production-a03e.up.railway.app/recommend", 
                 params={"query": query, "k": k}
             )
 
-
             if response.status_code == 200:
                 results = response.json()
-
                 if not results:
                     st.warning("No recommendations found for this query.")
                 else:
