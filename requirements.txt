@@ -9,3 +9,4 @@ streamlit
 requests
 python-multipart
 google-generativeai
+python-dotenv
