@@ -1,4 +1,4 @@
-# SHL Assessment Recommendation System
+#  Assessment Recommendation System
 
 This project is an AI-powered recommendation system that suggests the most relevant SHL assessments based on a natural language job description or query.
 
